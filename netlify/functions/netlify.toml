@@ -1,0 +1,12 @@
+# Ostateczna i kompletna konfiguracja Netlify
+[build]
+  # Folder, który ma być opublikowany jako strona. "." oznacza folder główny.
+  publish = "."
+  # Folder, w którym znajdują się funkcje serwerowe.
+  functions = "netlify/functions"
+
+# Przekierowanie, aby nasza funkcja działała pod ładnym adresem /api/
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
