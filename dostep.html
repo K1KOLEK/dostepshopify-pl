@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dostęp Premium - Mój Szablon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="navbar" class="navbar">
+        <a href="index.html" aria-label="Strona główna MójSzablon"><svg class="logo-svg" viewBox="0 0 132 38" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="shape" d="M2.19336 37.5V0.5H16.8934V13.85H27.3434V0.5H42.0434V37.5H27.3434V24.5H16.8934V37.5H2.19336Z"/><path class="shape" d="M57.6975 37.5V0.5H72.3975L86.6475 22.1V0.5H100.297V37.5H85.5975L71.3475 15.9V37.5H57.6975Z"/><path class="accent" d="M117.859 19C117.859 29.4264 109.286 38 98.8594 38C88.433 38 79.8594 29.4264 79.8594 19C79.8594 8.5736 88.433 0 98.8594 0C109.286 0 117.859 8.5736 117.859 19Z"/></svg></a>
+        <nav class="nav-links">
+            <ul>
+                <li><a href="index.html">Strona Główna</a></li>
+                <li><a href="dostep.html" class="active">Dostęp</a></li>
+            </ul>
+        </nav>
+        <div class="theme-switcher-container">
+            <label class="theme-switcher"><input type="checkbox" id="themeToggleCheckbox"><span class="slider"></span></label>
+        </div>
+    </header>
+    <main class="container">
+        <section class="dostep-container">
+            <h1>Dziękujemy za zakup na Allegro!</h1>
+            <p>Wpisz swój unikalny kod dostępu, który otrzymałeś w wiadomości e-mail, aby natychmiast pobrać pliki swojego szablonu.</p>
+            <div class="input-wrapper">
+                <input type="text" id="codeInput" placeholder="Wpisz swój unikalny kod...">
+                <button id="checkCodeBtn" class="button button-primary">Pobierz szablon</button>
+            </div>
+            <div id="downloadContainer" style="display: none; margin-top: 20px;">
+                <p class="success-message"><strong>Sukces!</strong> Kod poprawny. Twój szablon jest gotowy do pobrania.</p>
+                <a href="pliki/szablon-pro.zip" download class="button download-button">Pobierz Plik Teraz (.zip)</a>
+            </div>
+             <p id="errorMessage" class="error-message" style="display: none;">Niestety, podany kod jest nieprawidłowy. Skontaktuj się z nami, jeśli uważasz, że to pomyłka.</p>
+        </section>
+    </main>
+    <footer class="footer"><p>&copy; 2025 MójSzablon. Wszelkie prawa zastrzeżone.</p></footer>
+    <button id="backToTopBtn" title="Wróć na górę">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>
