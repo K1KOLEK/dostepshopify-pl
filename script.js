@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // --- LOGIKA DLA STRONY DOSTĘPU ---
+    // --- OSTATECZNA LOGIKA DLA STRONY DOSTĘPU ---
     const checkCodeBtn = document.getElementById('checkCodeBtn');
     if (checkCodeBtn) {
         const codeInput = document.getElementById('codeInput');
@@ -56,19 +56,21 @@ document.addEventListener('DOMContentLoaded', function() {
             downloadContainer.style.display = 'none';
 
             try {
-                // "Dzwonimy" do naszej funkcji na Netlify, wysyłając kod
                 const response = await fetch('/api/verifyCode', {
                     method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json'
+                    },
                     body: JSON.stringify({ code: enteredCode })
                 });
 
                 const data = await response.json();
 
-                if (response.ok) { // Status 2xx (sukces)
+                if (response.ok) { 
                     downloadContainer.style.display = 'block';
                     const downloadLink = downloadContainer.querySelector('a');
                     downloadLink.href = fileToDownload;
-                } else { // Status 4xx lub 5xx (błąd)
+                } else {
                     errorMessage.textContent = data.message || 'Wystąpił nieznany błąd.';
                     errorMessage.style.display = 'block';
                 }
